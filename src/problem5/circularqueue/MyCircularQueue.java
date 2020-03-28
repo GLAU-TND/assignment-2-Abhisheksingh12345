@@ -42,8 +42,14 @@ public class MyCircularQueue<E> implements MyCircularQueueADT<E> {
         return true;
     }
 
+    private void deleteFromQueue() {
+        front = front.getNext();
+        size--;
+    }
+
     @Override
     public boolean dequeue() {
+        deleteFromQueue();
         return false;
     }
 
