@@ -7,4 +7,8 @@
 package problem3.node;
 
 public class Node<E> {
+    private Node<E> next;
+    private Node<E> previous;
+    private E data;
+
 }
