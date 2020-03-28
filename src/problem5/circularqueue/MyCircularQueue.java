@@ -57,8 +57,22 @@ public class MyCircularQueue<E> implements MyCircularQueueADT<E> {
         return false;
     }
 
+    private void TraverseFromQueue() {
+        Node<E> response = front;
+        int i = 0;
+        System.out.println("[");
+        while (response.getNext() != null) {
+            System.out.println(response.getData() + ((i > size - 1) ? "," : ""));
+            response = response.getNext();
+            i++;
+        }
+        System.out.println("[");
+
+    }
+
     @Override
-    public boolean search(E data) {
-        return false;
+    public boolean Traverse() {
+        TraverseFromQueue();
+        return true;
     }
 }
