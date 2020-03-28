@@ -26,7 +26,6 @@ public class MyBinarySearchTree<E> implements BinarySearchTree<E> {
             currentMember.setRightChild(addInFamily(data, currentMember.getRightChild()));
         }
         return currentMember;
-
     }
 
     @Override
