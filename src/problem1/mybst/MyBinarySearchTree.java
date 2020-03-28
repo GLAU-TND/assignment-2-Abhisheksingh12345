@@ -142,4 +142,24 @@ public class MyBinarySearchTree<E> implements BinarySearchTree<E> {
         printOnlyLeftChildren(root);
         return true;
     }
+
+    public void traversePostOrder(TreeNode<E> currentNode) {
+        if (currentNode != null) {
+            traversePostOrder(currentNode.getLeftChild());
+            traversePostOrder(currentNode.getRightChild());
+            visit(currentNode.getData());
+        }
+    }
+
+    public void traversePerOrder(TreeNode<E> currentNode) {
+        if (currentNode == null) {
+            visit(currentNode.getData());
+            traversePerOrder(currentNode.getLeftChild());
+            traversePerOrder(currentNode.getRightChild());
+        }
+    }
+
+    private void visit(E data) {
+        System.out.println(" " + data);
+    }
 }
