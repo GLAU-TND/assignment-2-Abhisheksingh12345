@@ -15,6 +15,16 @@ public class MyBinarySearchTree<E> implements BinarySearchTree<E> {
     private int notContainLeftChild;
     private int height = 0;
 
+    /**
+     * In this adding new Node to the addInFamily function behaves like recursive function
+     * here every node is get store in currentMember parameter and then checked by if condition.
+     * condition are checked by comparision operator's and since data is of generic type then 1'st the data is
+     * data is typecast in integer for simplicity.
+     *
+     * @param data          --> store the in generic data.
+     * @param currentMember --> store the new data enter by user.
+     * @return current node after simplifing.
+     */
     private TreeNode<E> addInFamily(E data, TreeNode<E> currentMember) {
         if (currentMember == null) {
             TreeNode newMember = new TreeNode<>();
