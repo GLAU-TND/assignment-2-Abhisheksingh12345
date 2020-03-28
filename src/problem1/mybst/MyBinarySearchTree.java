@@ -48,8 +48,13 @@ public class MyBinarySearchTree<E> implements BinarySearchTree<E> {
         return true;
     }
 
+    private void deletFromFamily(E data, TreeNode<E> currentMember) {
+
+    }
+
     @Override
     public boolean remove(E data) {
+        deletFromFamily(data, root);
         return false;
     }
 
@@ -65,6 +70,6 @@ public class MyBinarySearchTree<E> implements BinarySearchTree<E> {
 
     @Override
     public boolean traverse() {
-        return false;
+        e;
     }
 }
