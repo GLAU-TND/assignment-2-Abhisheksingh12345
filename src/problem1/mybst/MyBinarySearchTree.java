@@ -5,11 +5,20 @@
  *  Time: 7:17 PM
  */
 package problem1.mybst;
+
+import problem1.node.TreeNode;
+
 // to implement BinarySearchTree
 public class MyBinarySearchTree<E> implements BinarySearchTree<E> {
+    private TreeNode<E> root;
+    private int size = 0;
+    private int notContainLeftChild;
+    private int height = 0;
+
+
     @Override
     public boolean add(E data) {
-        return false;
+
     }
 
     @Override
