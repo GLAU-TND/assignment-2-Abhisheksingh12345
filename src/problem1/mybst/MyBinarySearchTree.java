@@ -27,20 +27,17 @@ public class MyBinarySearchTree<E> implements BinarySearchTree<E> {
      */
     private TreeNode<E> addInFamily(E data, TreeNode<E> currentMember) {
         if (currentMember == null) {
-            TreeNode newMember = new TreeNode<>();
-            newMember.setData(data);
-        }
-        if ((Integer) data < (Integer) currentMember.getData()) {
+            return new TreeNode<>(data);
+        } else if ((Integer) data < (Integer) currentMember.getData()) {
             currentMember.setLeftChild(addInFamily(data, currentMember.getLeftChild()));
-        } else {
+        } else
             currentMember.setRightChild(addInFamily(data, currentMember.getRightChild()));
-        }
         return currentMember;
     }
 
-    public int parentNoContainLeftChild() {
-
-    }
+//    public int parentNoContainLeftChild() {
+//
+//    }
 
 
     @Override
@@ -83,9 +80,8 @@ public class MyBinarySearchTree<E> implements BinarySearchTree<E> {
         if ((Integer) currentMember.getData() < (Integer) data) {
             deleteFromFamily(data, currentMember.getRightChild());
         } else {
-            deleteFromFamily(data, currentMember.getLeftChild());
+            currentMember.setRightChild(deleteFromFamily(data, currentMember.getRightChild()));
         }
-        currentMember.setRightChild(deleteFromFamily(data, currentMember.getRightChild()));
         return currentMember;
     }
 
@@ -102,13 +98,30 @@ public class MyBinarySearchTree<E> implements BinarySearchTree<E> {
 
     @Override
     public boolean remove(E data) {
-        deletFromFamily(data, root);
-        return false;
+        root = deleteFromFamily(data, root);
+        size--;
+        return true;
     }
 
     @Override
     public boolean insert(E data) {
         return false;
+    }
+
+    @Override
+    public boolean search() {
+        return false;
+    }
+
+    /**
+     * this function check the member from the root member in @param fromTop
+     * program behaviour have if - condition statement and call the leftChild function.
+     *
+     * @param fromTop --> store the root member.
+     */
+    private void printOnlyLeftChildren(TreeNode<E> fromTop) {
+        if (fromTop == null) System.out.println("there are 0 member in the family");
+        else leftChild(fromTop);
     }
 
     /**
