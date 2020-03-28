@@ -27,6 +27,14 @@ public class MyPriorityQueue<E> implements PriorityQueueADT<E> {\
         }
     }
 
+    /**
+     * this is recursive function
+     * In this function the new node is created by the same name again-again but with different functionalists
+     *
+     * @param data        --> generic type data store the generic data.
+     * @param placeHolder --> Integer value which define the priority of the data
+     * @param response    -->takeover the reference of the front node then changed according to the condition.
+     */
     private void checkPriority(E data, int placeHolder, Node<E> response) {
         if (response.getPriorityOfData() < placeHolder) {
             if (response.getNext() == null) {
