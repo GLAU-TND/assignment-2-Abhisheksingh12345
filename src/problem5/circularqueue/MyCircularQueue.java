@@ -75,4 +75,22 @@ public class MyCircularQueue<E> implements MyCircularQueueADT<E> {
         TraverseFromQueue();
         return true;
     }
+
+    private void searchFromQueue(E data) {
+        Node<E> response = front;
+        boolean found = false;
+        while (response != null) {
+            if (response.getData() == data) {
+                System.out.println("your " + data + " is been found");
+                found = true;
+            }
+            if (found) System.out.println("sorry your data is not found from record");
+        }
+    }
+
+    @Override
+    public boolean search(E data) {
+        searchFromQueue(data);
+        return true;
+    }
 }
