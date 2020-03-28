@@ -111,13 +111,22 @@ public class MyBinarySearchTree<E> implements BinarySearchTree<E> {
         return false;
     }
 
-    @Override
-    public boolean search() {
-        return false;
+    /**
+     * this is a recursive function which continuously print the childSide-family of tree.
+     *
+     * @param leftSide --> stored root member.
+     */
+    private void leftChild(TreeNode<E> leftSide) {
+        if (leftSide.getData() == null) {
+            System.out.println("these are the left-family member");
+        }
+        System.out.println(leftSide.getData());
+        leftChild(leftSide.getLeftChild());
     }
 
     @Override
     public boolean traverse() {
-        e;
+        printOnlyLeftChildren(root);
+        return true;
     }
 }

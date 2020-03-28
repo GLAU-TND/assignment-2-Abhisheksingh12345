@@ -15,6 +15,10 @@ public class TreeNode<E> {
         return rightChild;
     }
 
+    public TreeNode(E data) {
+        this.data = data;
+    }
+
     public void setRightChild(TreeNode<E> rightChild) {
         this.rightChild = rightChild;
     }
