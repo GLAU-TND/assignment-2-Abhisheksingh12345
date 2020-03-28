@@ -12,8 +12,9 @@ public class Node<E> {
     private E data;
     private int priorityOfData;
 
-    public Node(E data) {
+    public Node(E data, int priorityOfData) {
         this.data = data;
+        this.priorityOfData = priorityOfData;
     }
 
     public Node<E> getNext() {
