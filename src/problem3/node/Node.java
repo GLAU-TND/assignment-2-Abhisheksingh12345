@@ -10,6 +10,7 @@ public class Node<E> {
     private Node<E> next;
     private Node<E> previous;
     private E data;
+    private int priorityOfData;
 
     public Node(E data) {
         this.data = data;
