@@ -8,22 +8,7 @@ package problem3.node;
 
 public class Node<E> {
     private Node<E> next;
-    private Node<E> previous;
     private E data;
-    private int priorityOfData;
-
-    public int getPriorityOfData() {
-        return priorityOfData;
-    }
-
-    public void setPriorityOfData(int priorityOfData) {
-        this.priorityOfData = priorityOfData;
-    }
-
-    public Node(E data, int priorityOfData) {
-        this.data = data;
-        this.priorityOfData = priorityOfData;
-    }
 
     public Node<E> getNext() {
         return next;
@@ -33,13 +18,6 @@ public class Node<E> {
         this.next = next;
     }
 
-    public Node<E> getPrevious() {
-        return previous;
-    }
-
-    public void setPrevious(Node<E> previous) {
-        this.previous = previous;
-    }
 
     public E getData() {
         return data;
@@ -48,4 +26,5 @@ public class Node<E> {
     public void setData(E data) {
         this.data = data;
     }
+
 }
