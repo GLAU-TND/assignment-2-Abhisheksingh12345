@@ -6,7 +6,13 @@
  */
 package problem3.myqueue;
 
-public class MyPriorityQueue<E> implements PriorityQueueADT<E> {
+import problem3.node.Node;
+
+public class MyPriorityQueue<E> implements PriorityQueueADT<E> {\
+    private Node<E> front = null;
+    private Node<E> rear = null;
+    private int size = 0;
+
     @Override
     public boolean add(E data) {
         return false;
