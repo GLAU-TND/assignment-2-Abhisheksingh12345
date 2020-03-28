@@ -8,4 +8,6 @@ public interface BinarySearchTree<E> {
     boolean insert(E data);
 
     boolean search();
+
+    boolean traverse();
 }

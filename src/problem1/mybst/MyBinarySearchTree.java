@@ -28,9 +28,14 @@ public class MyBinarySearchTree<E> implements BinarySearchTree<E> {
         return currentMember;
     }
 
+    public int parentNoContainLeftChild() {
+
+    }
+
     @Override
     public boolean add(E data) {
         root = addInFamily(data, root);
+        return true;
     }
 
     @Override
@@ -45,6 +50,11 @@ public class MyBinarySearchTree<E> implements BinarySearchTree<E> {
 
     @Override
     public boolean search() {
+        return false;
+    }
+
+    @Override
+    public boolean traverse() {
         return false;
     }
 }
