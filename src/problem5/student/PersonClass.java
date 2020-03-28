@@ -12,11 +12,6 @@ public class PersonClass {
     private int age;
     private long rollNo;
 
-    public PersonClass(String name, int age, long rollNo) {
-        this.name = name;
-        this.age = age;
-        this.rollNo = rollNo;
-    }
 
     public PersonClass(int age, String Name) {
     }
