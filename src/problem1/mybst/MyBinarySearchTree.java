@@ -46,6 +46,7 @@ public class MyBinarySearchTree<E> implements BinarySearchTree<E> {
     @Override
     public boolean add(E data) {
         root = addInFamily(data, root);
+        size++;
         return true;
     }
 
