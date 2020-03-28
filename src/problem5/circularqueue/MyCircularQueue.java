@@ -5,6 +5,7 @@
  *  Time: 7:06 PM
  */
 package problem5.circularqueue;
+
 import problem5.node.*;
 
 //to implement circular queue
@@ -17,10 +18,28 @@ public class MyCircularQueue<E> implements MyCircularQueueADT<E> {
         this.size = size;
     }
 
+    public Node<E> createCircularNode(E data) {
+        return new Node<>(data);
+    }
+
+    private void addFromFront(E data, int size) {
+        if (size <= this.size) {
+            if (size == 0) {
+                front = createCircularNode(data);
+                rear = front;
+            } else {
+                rear.setNext(createCircularNode(data));
+                rear = rear.getNext();
+            }
+        } else {
+            System.out.println("Sorry can't store data queue underflow please delete some data");
+        }
+    }
+
     @Override
     public boolean enqueue(E data) {
         addFromFront(data, size);
-
+        return true;
     }
 
     @Override
