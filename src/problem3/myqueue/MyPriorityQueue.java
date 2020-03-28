@@ -72,8 +72,15 @@ public class MyPriorityQueue<E> implements PriorityQueueADT<E> {\
 
     @Override
     public boolean traverse() {
-
-        return false;
+        Node<E> responce = front;
+        int i = 0;
+        System.out.print("[");
+        while (responce.getNext() != null) {
+            System.out.print(responce.getNext() + (i < size ? ", " : ""));
+            responce = responce.getNext();
+        }
+        System.out.print("]");
+        return true;
     }
 
     @Override
