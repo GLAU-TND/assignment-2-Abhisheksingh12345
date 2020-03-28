@@ -13,7 +13,7 @@ public class MyPriorityQueue<E> implements PriorityQueueADT<E> {\
     private Node<E> rear = null;
     private int size = 0;
 
-    private Node<E> addInQueue(E data, int placeHolder) {
+    private void addInQueue(E data, int placeHolder) {
         if (front == null) {
             /**
              * node=new Node<>(null,data);
@@ -23,20 +23,48 @@ public class MyPriorityQueue<E> implements PriorityQueueADT<E> {\
             front = new Node<>(data, placeHolder);
             rear = front;
         } else {
-            checkPriority(data, placeHolder);
+            checkPriority(data, placeHolder, front);
         }
-        return front;
+    }
+
+    private void checkPriority(E data, int placeHolder, Node<E> response) {
+        if (response.getPriorityOfData() < placeHolder) {
+            if (response.getNext() == null) {
+                Node<E> newOne = new Node<>(data, placeHolder);
+                response.setNext(newOne);
+                rear = newOne;
+            } else if (response.getNext().getPriorityOfData() > placeHolder) {
+                Node<E> newOne = new Node<E>(data, placeHolder);
+                newOne.setNext(response.getNext());
+                newOne.setPrevious(response);
+            } else {
+                checkPriority(data, placeHolder, response.getNext());
+            }
+        } else {
+            if (response.getPrevious() == null) {
+                Node<E> newOne = new Node<>(data, placeHolder);
+                response.setNext(newOne);
+                front = newOne;
+            } else if (response.getPrevious().getPriorityOfData() < placeHolder) {
+                Node<E> newOne = new Node<E>(data, placeHolder);
+                newOne.setNext(response);
+                newOne.setPrevious(response.getNext());
+            } else {
+                checkPriority(data, placeHolder, response.getPrevious());
+            }
+        }
+
     }
 
     @Override
     public boolean add(E data, int priority) {
-        front = addInQueue(data, priority);
+        addInQueue(data, priority);
         return true;
     }
 
     @Override
     public boolean traverse() {
-        traverse
+
         return false;
     }
 
