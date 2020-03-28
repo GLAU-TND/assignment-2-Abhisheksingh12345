@@ -12,6 +12,14 @@ public class Node<E> {
     private E data;
     private int priorityOfData;
 
+    public int getPriorityOfData() {
+        return priorityOfData;
+    }
+
+    public void setPriorityOfData(int priorityOfData) {
+        this.priorityOfData = priorityOfData;
+    }
+
     public Node(E data, int priorityOfData) {
         this.data = data;
         this.priorityOfData = priorityOfData;
