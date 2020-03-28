@@ -42,12 +42,20 @@ public class MyBinarySearchTree<E> implements BinarySearchTree<E> {
 
     }
 
+
     @Override
     public boolean add(E data) {
         root = addInFamily(data, root);
         return true;
     }
 
+    /**
+     * this is a recursive function deleteFromFamily.
+     * here the data is 1'st find out of family and then called findSmallest member form family (Tree) and then it swaped the order in family .
+     *
+     * @param data --> generic type data .
+     * @return --> return result if there are 0 member in family then it return null otherwise return hole concluded tree.
+     */
     private TreeNode<E> deleteFromFamily(E data, TreeNode<E> currentMember) {
         if (currentMember == null) {
             System.out.println("there are 0 family member ");
