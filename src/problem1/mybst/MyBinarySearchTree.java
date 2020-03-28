@@ -10,15 +10,28 @@ import problem1.node.TreeNode;
 
 // to implement BinarySearchTree
 public class MyBinarySearchTree<E> implements BinarySearchTree<E> {
-    private TreeNode<E> root;
+    private TreeNode<E> root = null;
     private int size = 0;
     private int notContainLeftChild;
     private int height = 0;
 
+    private TreeNode<E> addInFamily(E data, TreeNode<E> currentMember) {
+        if (currentMember == null) {
+            TreeNode newMember = new TreeNode<>();
+            newMember.setData(data);
+        }
+        if ((Integer) data < (Integer) currentMember.getData()) {
+            currentMember.setLeftChild(addInFamily(data, currentMember.getLeftChild()));
+        } else {
+            currentMember.setRightChild(addInFamily(data, currentMember.getRightChild()));
+        }
+        return currentMember;
+
+    }
 
     @Override
     public boolean add(E data) {
-
+        root = addInFamily(data, root);
     }
 
     @Override

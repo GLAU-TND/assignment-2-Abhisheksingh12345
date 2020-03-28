@@ -7,23 +7,23 @@
 package problem1.node;
 
 public class TreeNode<E> {
-    private TreeNode rightChild;
-    private TreeNode leftChild;
+    private TreeNode<E> rightChild;
+    private TreeNode<E> leftChild;
     private E data;
 
-    public TreeNode getRightChild() {
+    public TreeNode<E> getRightChild() {
         return rightChild;
     }
 
-    public void setRightChild(TreeNode rightChild) {
+    public void setRightChild(TreeNode<E> rightChild) {
         this.rightChild = rightChild;
     }
 
-    public TreeNode getLeftChild() {
+    public TreeNode<E> getLeftChild() {
         return leftChild;
     }
 
-    public void setLeftChild(TreeNode leftChild) {
+    public void setLeftChild(TreeNode<E> leftChild) {
         this.leftChild = leftChild;
     }
 
