@@ -52,7 +52,7 @@ public class MyBinarySearchTree<E> implements BinarySearchTree<E> {
 
     /**
      * this is a recursive function deleteFromFamily.
-     * here the data is 1'st find out of family and then called findSmallest member form family (Tree) and then it swaped the order in family .
+     * here the data is 1'st find out of family and then called findSmallest member form family (Tree) and then it swapped the order in family .
      *
      * @param data --> generic type data .
      * @return --> return result if there are 0 member in family then it return null otherwise return hole concluded tree.
@@ -87,6 +87,17 @@ public class MyBinarySearchTree<E> implements BinarySearchTree<E> {
         }
         currentMember.setRightChild(deleteFromFamily(data, currentMember.getRightChild()));
         return currentMember;
+    }
+
+    /**
+     * this function will found out the last children of the family from its forefather or can says its parents-parents
+     * there the tertiary condition which continuously check for last member until the condition is true.
+     *
+     * @param findPOutMember --> make out the last member of the family in leftChildren direction.
+     * @return --> return the last member of the family.
+     */
+    private E findSmallest(TreeNode<E> findPOutMember) {
+        return (findPOutMember.getLeftChild() == null) ? findPOutMember.getData() : findSmallest(findPOutMember.getLeftChild());
     }
 
     @Override
