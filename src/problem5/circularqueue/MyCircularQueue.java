@@ -18,6 +18,10 @@ public class MyCircularQueue<E> implements MyCircularQueueADT<E> {
         this.size = size;
     }
 
+    public int getSize() {
+        return size;
+    }
+
     public Node<E> createCircularNode(E data) {
         return new Node<>(data);
     }
